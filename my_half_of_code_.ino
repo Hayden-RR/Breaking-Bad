@@ -1,9 +1,21 @@
+#include <Servo.h>
+
+Servo rvservo; //servo for the rv
+const int walterWipe = 2;
+ 
+
 void setup() {
-  // put your setup code here, to run once:
+  rvservo.attach(3);
+  pinMode(walterWipe, INPUT);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (digitalRead(walterWipe) == HIGH){
+    rvservo.write(180);
+  }else{
+    rvservo.write(0);
+  }
+  
 
 }
